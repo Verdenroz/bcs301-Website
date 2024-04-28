@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import { DropdownMenu } from "./DropdownMenu";
+import { TopBar, BottomBar } from "./NavBar";
 
 function App() {
+  const [selectedName, setSelectedName] = useState("");
+
+  const handleSelectChange = (event) => {
+    setSelectedName(event.target.value);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <section>
+        <header>
+          <TopBar />
+        </header>
+        <main>
+          <img src="/images/calendar.png" alt="calendar" />
+          <div className="main-container">
+            <div className="main-header">
+              <h2>Select Mentor</h2>
+              <DropdownMenu
+                selectedName={selectedName}
+                handleSelectChange={handleSelectChange}
+              />
+            </div>
+            <button>Create Appointment</button>
+          </div>
+        </main>
+        <footer>
+          <BottomBar />
+        </footer>
+      </section>
     </div>
   );
 }
