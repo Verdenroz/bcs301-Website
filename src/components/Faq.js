@@ -18,7 +18,8 @@ function Faq() {
         />
         <FaqCard
           question="What happens if there are no available appointments?"
-          answer="To create an account, click on the 'Sign Up' button and fill out the required information"
+          answer="You will be assigned to a wait list.  The next available appointment will be reserved for
+          you."
         />
         <FaqCard
             question="How do I schedule an appointment?"
