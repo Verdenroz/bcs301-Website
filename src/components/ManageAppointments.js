@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ManageAppointments.css";
+import "../css/ManageAppointments.css";
 
 function ManageAppointments() {
   const [selectedAppointment, setSelectedAppointment] = useState(null);

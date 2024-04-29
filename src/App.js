@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "./App.css";
+import "./css/App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { DropdownMenu } from "./DropdownMenu";
-import { TopBar, BottomBar } from "./NavBar";
-import ManageAppointments from "./ManageAppointments";
+import { DropdownMenu } from "./components/DropdownMenu";
+import { TopBar, BottomBar } from "./components/NavBar";
+import ManageAppointments from "./components/ManageAppointments";
 
 function App() {
   const [selectedName, setSelectedName] = useState("");
