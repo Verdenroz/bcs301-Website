@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { DropdownMenu } from "./DropdownMenu";
 import { TopBar, BottomBar } from "./NavBar";
+import ManageAppointments from "./ManageAppointments";
 
 function App() {
   const [selectedName, setSelectedName] = useState("");
@@ -11,29 +13,37 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <section>
-        <header>
-          <TopBar />
-        </header>
-        <main>
-          <img src="/images/calendar.png" alt="calendar" />
-          <div className="main-container">
-            <div className="main-header">
-              <h2>Select Mentor</h2>
-              <DropdownMenu
-                selectedName={selectedName}
-                handleSelectChange={handleSelectChange}
-              />
-            </div>
-            <button>Create Appointment</button>
-          </div>
-        </main>
-        <footer>
-          <BottomBar />
-        </footer>
-      </section>
-    </div>
+    <Router>
+      <div className="App">
+        <section>
+          <header>
+            <TopBar />
+          </header>
+          <main>
+            <Routes>
+              <Route path="/manage-appointments" element={<ManageAppointments />} />
+              <Route path="/" element={
+                <>
+                  <img src="/images/calendar.png" alt="calendar" />
+                  <div className="main-container">
+                    <div className="main-header">
+                      <h2>Select Mentor</h2>
+                      <DropdownMenu
+                        selectedName={selectedName}
+                        handleSelectChange={handleSelectChange}
+                      />
+                    </div>
+                  </div>
+                </>
+              } />
+            </Routes>
+          </main>
+          <footer>
+            <BottomBar />
+          </footer>
+        </section>
+      </div>
+    </Router>
   );
 }
 
