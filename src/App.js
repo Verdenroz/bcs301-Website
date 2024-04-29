@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { DropdownMenu } from "./components/DropdownMenu";
 import { TopBar, BottomBar } from "./components/NavBar";
 import ManageAppointments from "./components/ManageAppointments";
+import Faq from "./components/Faq";
 
 function App() {
   const [selectedName, setSelectedName] = useState("");
@@ -22,6 +23,7 @@ function App() {
           <main>
             <Routes>
               <Route path="/manage-appointments" element={<ManageAppointments />} />
+              <Route path="/faq" element={<Faq />} />
               <Route path="/" element={
                 <>
                   <img src="/images/calendar.png" alt="calendar" />
