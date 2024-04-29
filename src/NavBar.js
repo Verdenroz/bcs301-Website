@@ -33,16 +33,16 @@ export function BottomBar() {
       <div style={{width: "100%"}}>
         <ul className="bottom-nav-links">
           <li className="desktop-nav">
-            <a href="#contact-us">Contact Us</a>
+            <Link to="/contact">Contact Us</Link>
           </li>
           <li className="desktop-nav">
-            <a href="#faq">FAQ</a>
+            <Link to="/faq">FAQ</Link>
           </li>
           <li className="desktop-nav">
-            <a href="#terms">Terms & Conditions</a>
+            <Link to="/terms">Terms & Conditions</Link>
           </li>
           <li className="desktop-nav">
-            <a href="#careers">Careers</a>
+            <Link to="/careers">Careers</Link>
           </li>
         </ul>
       </div>
