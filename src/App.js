@@ -5,6 +5,8 @@ import { DropdownMenu } from "./components/DropdownMenu";
 import { TopBar, BottomBar } from "./components/NavBar";
 import ManageAppointments from "./components/ManageAppointments";
 import Faq from "./components/Faq";
+import Contact from "./components/Contact";
+import PastActivity from "./components/PastActivity";
 
 function App() {
   const [selectedName, setSelectedName] = useState("");
@@ -24,6 +26,8 @@ function App() {
             <Routes>
               <Route path="/manage-appointments" element={<ManageAppointments />} />
               <Route path="/faq" element={<Faq />} />
+              <Route path="/past-activity" element={<PastActivity />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="/" element={
                 <>
                   <img src="/images/calendar.png" alt="calendar" />
